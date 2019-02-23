@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body ng-controller="myController">
+    <div>
+        First Name : {{ person.firstName }} <br>
+        Last Name : {{ person.lastName }} <br>
+        Email ID : {{ person.email }} <br>
+        Gender : {{ person.gender }} <br>
+        Mobile No : {{ person.mobile_no }}
+        <br>
+    </div>
+<br><hr>
+    <div>
+        <h2>Our Cities Name :-</h2>
+        DHN - {{ city[0] }} <br>
+        RNC - {{ city[1] }} <br>
+        BKR - {{ city[2] }} <br>
+        JSR - {{ city[3] }} <br>
+        GUM - {{ city[4] }} <br>
+    </div>
+</body>
+</html>

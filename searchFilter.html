@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/searchFilter.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="myController">
+    <h1>Employee Details:-</h1>
+    <br>
+    Search Here: <input type="text" placeholder="Search Here..." ng-model="searchData">
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name
+                </th>
+                <th>Last Name
+                </th>
+                <th>Email ID
+                </th>
+                <th>Gender
+                </th>
+                <th>Mobile No.
+                </th>
+                <th>Date of Birth
+                </th>
+                <th>Salary (currency)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="emp in employee | filter:searchData">
+                <td> {{ emp.fname | uppercase }} </td>
+                <td> {{ emp.lname | uppercase}} </td>
+                <td> {{ emp.email }} </td>
+                <td> {{ emp.gender | lowercase }} </td>
+                <td> {{ emp.mobile_no }} </td>
+                <td> {{ emp.dateOfBirth | date:dd/MM/yyyy }} </td>
+                <td> {{ emp.salary | currency:"$":2}} </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

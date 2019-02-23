@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/sortingData.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="myController">
+    <h1>Employee Details:-</h1>
+    <b>Order By:</b>
+     <select ng-model="sortColumn">
+         <option value="" selected disabled>Please Select to Sort Data</option>
+         <option value="fname">First Name ASC</option>
+         <option value="email">Email ID ASC</option>
+         <option value="-mobile_no">Mobile Number DESC</option>
+         <option value="-salary">Salary DESC</option>
+     </select>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email ID</th>
+                <th>Gender</th>
+                <th>Mobile No.</th>
+                <th>Date of Birth</th>
+                <th>Salary (number)</th>
+                <th>Salary (currency)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="emp in employee | orderBy:sortColumn" >
+                <td> {{ emp.fname | uppercase }} </td>
+                <td> {{ emp.lname | uppercase}} </td>
+                <td> {{ emp.email }} </td>
+                <td> {{ emp.gender | lowercase }} </td>
+                <td> {{ emp.mobile_no }} </td>
+                <td> {{ emp.dateOfBirth | date:dd/MM/yyyy }} </td>
+                <td> {{ emp.salary | number:2 }} </td>
+                <td> {{ emp.salary | currency:"&pound;":1}} </td>
+            </tr>
+        </tbody>
+    </table>    
+</body>
+</html>

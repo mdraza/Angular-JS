@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/event_handling.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="myController">
+    <h1>Courses Like & Dislike Details:-</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Names</th>
+                <th>Likes</th>
+                <th>Dislikes</th>
+                <th>Like / Dislike</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="course in courses">
+                <td>
+                    {{ course.name }}
+                </td>
+                <td>
+                    {{ course.likes }}
+                </td>
+                <td>
+                    {{ course.dislikes }}
+                </td>
+                <td>
+                    <input type="button" value="Like" ng-click="incrementLikes(course)">
+                    <input type="button" value="Dislike" ng-click="incrementDislikes(course)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

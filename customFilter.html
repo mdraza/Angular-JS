@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/customFilter.js"></script>
+    <script src="js/cusFilter.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="myController">
+    <h1>Employee Details:</h1>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email ID</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="emp in employee">
+                <td> {{ emp.name }} </td>
+                <td> {{ emp.email }} </td>
+                <td> {{ emp.age }} </td>
+                <td> {{ emp.salary }} </td>
+                <td> {{ emp.gender | gender}} </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

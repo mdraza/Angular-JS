@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ng-repeat2.js"></script>
+</head>
+
+<body ng-controller="myController">
+    <h2>Employee Details:-</h2>
+
+    <ul>
+        <li ng-repeat="st in state">
+            {{ st.name }}
+            <ul>
+                <li ng-repeat="ct in st.city">
+                    {{ ct.name }}
+                    <ul>
+                        <li ng-repeat="vill in ct.village">
+                            {{ vill.name }}
+                            <ul>
+                                <li ng-repeat="mob in vill.mobile">
+                                    Mobile Number - {{ mob.number }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</body>
+
+</html>

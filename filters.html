@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/filters.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="myController">
+    <h1>Employee Details:-</h1>
+    <b>Number of Row Show:</b> <input type="number" step="1" min="1" max="5" ng-model="rowLimit">
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Mobile No.</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Salary (number)</th>
+                <th>Salary (currency)</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr ng-repeat="employee in employees | limitTo:rowLimit">
+                <td> {{ employee.name | uppercase}} </td>
+                <td> {{ employee.age }} </td>
+                <td> {{ employee.mobile_no }} </td>
+                <td> {{ employee.address }} </td>
+                <td> {{ employee.dateOfBirth | date:"dd/MM/yyyy" }} </td>
+                <td> {{ employee.salary | number:2}} </td>
+                <td> {{ employee.salary | currency:"":1}} </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

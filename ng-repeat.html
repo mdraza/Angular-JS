@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="myController">
+    <table>
+        <caption><h2>Brother's Details:</h2></caption>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email ID</th>
+                <th>Mobile NO.</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="emply in employee" >
+                <td> {{ emply.firstName }} </td>
+                <td>{{ emply.lastName }}</td>
+                <td>{{ emply.email_id }}</td>
+                <td>{{ emply.mobile_no }}</td>
+                <td>{{ emply.gender }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br><hr>
+
+    <h2>User Name & Personal Information:</h2>
+    <ul>
+        <li ng-repeat ="raza in person" ng-init="parentIndex = $index">
+            {{ raza.name }} = <b>Index -</b> {{ $index }}
+            <ul>
+                <li ng-repeat="detail in raza.info">
+                    {{ detail.mobile_no }}  = <i>Index -</i> {{ $index }}, <i>Parent Index = </i> {{ parentIndex }}
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+
+</body>
+</html>

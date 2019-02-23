@@ -1,0 +1,35 @@
+table,th,td{
+    border: 1px dashed green;
+}
+table{
+    border-collapse: collapse;
+}
+th,td{
+    padding: 15px;
+}
+tr,th, td{
+    text-align: left;
+}
+tr td input{
+    width: 65px;
+    height: 25px;
+}
+th{
+    cursor: pointer;
+}
+.arrow-up{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid rgb(6, 153, 6);
+    display: inline-block;
+}
+.arrow-down{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid rgb(6, 153, 6);
+    display: inline-block;
+}

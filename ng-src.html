@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body ng-controller="myController">
+    <div>
+        <h3>Employee Details:</h3>
+        First Name - {{ employee.firstName }} <br>
+        Last Name - {{ employee.lastName }} <br>
+        Email ID - {{ employee.email_id }} <br>
+        Mobile No. - {{ employee.mobile_no }} <br>
+        Gender - {{ employee.gender }} <br> <br>
+        Employee Profile Pic. <br> - <img ng-src="{{ employee.profile_pic }}" alt="Profile Pic" width="200" height="220">
+
+    </div>
+</body>
+</html>
