@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ng-include.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="myController">
+    <h1>User Details:</h1>
+    <br>
+    <Select ng-model="userDetail">
+        <option value="userTable.html">Table Data</option>
+        <option value="userList.html">List Data</option>
+    </Select>
+    <br><br>
+    <div ng-include="userDetail"></div>
+</body>
+</html>

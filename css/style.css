@@ -33,3 +33,18 @@ th{
     border-top: 10px solid rgb(6, 153, 6);
     display: inline-block;
 }
+.main{
+    width: 60%;
+    margin: auto;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 25px;
+    text-align: center;
+}
+.main p{
+    text-align: justify !important;
+}
+.main button{
+    cursor: pointer;
+}
