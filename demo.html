@@ -1,54 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myModule">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="js/angular.min.js"></script>
-    <script src="js/demo.js"></script>
-    <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-controller="myController">
-    <h1>Employee Details:-</h1>
-    <br>
-    <table>
-        <thead>
-            <tr>
-                <th ng-click="sortData('fname')">First Name
-                    <div ng-class="sortByArrow('fname')"></div>
-                </th>
-                <th ng-click="sortData('lname')">Last Name
-                    <div ng-class="sortByArrow('lname')"></div>
-                </th>
-                <th ng-click="sortData('email')">Email ID
-                    <div ng-class="sortByArrow('email')"></div>
-                </th>
-                <th ng-click="sortData('gender')">Gender
-                    <div ng-class="sortByArrow('gender')"></div>
-                </th>
-                <th ng-click="sortData('mobile_no')">Mobile No.
-                    <div ng-class="sortByArrow('mobile_no')"></div>
-                </th>
-                <th ng-click="sortData('dateOfBirth')">Date of Birth
-                    <div ng-class="sortByArrow('dateOfBirth')"></div>
-                </th>
-                <th ng-click="sortData('salary')">Salary (currency)
-                    <div ng-class="sortByArrow('salary')"></div>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="emp in employee | orderBy:sortColumn:reverseSort" >
-                <td> {{ emp.fname | uppercase }} </td>
-                <td> {{ emp.lname | uppercase}} </td>
-                <td> {{ emp.email }} </td>
-                <td> {{ emp.gender | lowercase }} </td>
-                <td> {{ emp.mobile_no }} </td>
-                <td> {{ emp.dateOfBirth | date:dd/MM/yyyy }} </td>
-                <td> {{ emp.salary | currency:"$":2}} </td>
-            </tr>
-        </tbody>
-    </table>    
+<body ng-app="">
+    <h1>Angular Js</h1>
+
+    <div >
+        Adding of Two Numbres = {{ 10 + 20 }}
+    </div>
+    
+    <div >
+        Adding of Strings = {{ "Muhammad Razaullah" +" "+  "Ansari" }}
+    </div>
+    <div>
+        {{ 1 == 1 && 2 == 2 }}
+    </div>
+    <div>
+        {{ {name:'Muhammad Razaullah', email:'raza@gmail.com'}.name }} <br>
+        {{ {name:'Muhammad Razaullah', email:'raza@gmail.com'}.email }}
+    </div>
+    <div>
+        {{ ['red','green','blue'][2] }} <br>
+        {{ ['red','green','blue'].length }}
+    </div>
+    
 </body>
 </html>
